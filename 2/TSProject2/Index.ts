@@ -124,3 +124,58 @@ console.log(Sum(10,20));
 
 
 
+
+
+
+//| (return void Or string)
+type MyFunctionTypes = (() => void) | string
+const getMyPrinter =
+(printType: string, n1: string, n2: string):
+MyFunctionTypes => {
+if (printType ==
+'fullName') {
+return () => {
+return
+console.log(`${n1} ${n2}`)
+};
+}
+else if (printType == 'comma') {
+return () => {
+return console.log(`${n1}, ${n2}`) }
+}
+else {
+return n1 + n2;
+}
+}
+
+
+const printFun = getMyPrinter('fullName','Angular', 'Typescript');
+
+const printFun2 =getMyPrinter('comma', 'Angular','Typescript'); // Void
+const printFun3 =getMyPrinter('SomethingElse', 'Angular','Typescript'); // Void
+//New Function
+//If Fun Return String Will Print That String // If return Void Will Exec myPrinter()
+const printFormPrinter = (myPrinter:MyFunctionTypes) => (typeof myPrinter =='string') ? console.log(myPrinter) : myPrinter(); // String
+printFormPrinter(printFun);
+printFormPrinter(printFun2);
+printFormPrinter(printFun3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
