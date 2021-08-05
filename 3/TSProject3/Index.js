@@ -81,6 +81,7 @@ var SystemUser = [
 // var AMap2 = [];
 // for(var V of SystemUser)
 // {
+// //destractore
 //     const{FirstName,LastName}=V;
 //     AMap2.push({FirstName:FirstName,LastName:LastName});
 // }
@@ -95,13 +96,18 @@ var SystemUser = [
 //     if(NewVal.Order.length != 0 && NewVal.FirstName == 'Osama1'){ NewVal.Order.length = 0;}
 // }
 // console.log(SystemUser);
-//Keys
-var UserInfo = {
-    firstName: 'Soos',
-    LastName: 'DJ',
-    age: '25'
-};
-Object.keys(UserInfo).forEach(function (Key) {
-    console.log(Key + " = " + UserInfo[Key]);
+// //Keys
+// const UserInfo : any = {
+//     firstName : 'Soos',
+//     LastName : 'DJ',
+//     age:'25'
+// }
+// //Print Key = Value
+// Object.keys(UserInfo).forEach((Key:any)=>{
+//     console.log(`${Key} = ${UserInfo[Key]}`);
+// })
+var NewList = SystemUser.filter(function (a) { return a.isPremium; }).map(function (user) {
+    var FirstName = user.FirstName, LastName = user.LastName;
+    return { FirstName: FirstName, LastName: LastName };
 });
-console.log(UserInfo);
+console.log(NewList);

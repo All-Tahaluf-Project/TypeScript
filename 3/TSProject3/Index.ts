@@ -111,16 +111,24 @@ var SystemUser = [
 // console.log(SystemUser);
 
 
-//Keys
-const UserInfo : any = {
-    firstName : 'Soos',
-    LastName : 'DJ',
-    age:'25'
-}
-//Print Key = Value
-Object.keys(UserInfo).forEach((Key:any)=>{
-    console.log(`${Key} = ${UserInfo[Key]}`);
-})
+// //Keys
+// const UserInfo : any = {
+//     firstName : 'Soos',
+//     LastName : 'DJ',
+//     age:'25'
+// }
+// //Print Key = Value
+// Object.keys(UserInfo).forEach((Key:any)=>{
+//     console.log(`${Key} = ${UserInfo[Key]}`);
+// })
 
+
+
+var NewList = SystemUser.filter(a=>a.isPremium).map((user)=>{
+   const {FirstName,LastName} = user;
+   return {FirstName,LastName};
+});
+
+console.log(NewList);
 
 
