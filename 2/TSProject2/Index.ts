@@ -128,10 +128,8 @@ console.log(Sum(10,20));
 
 
 //| (return void Or string)
-type MyFunctionTypes = (() => void) | string
-const getMyPrinter =
-(printType: string, n1: string, n2: string):
-MyFunctionTypes => {
+type MyFunctionTypes = (() => void) | string;
+const getMyPrinter = (printType: string, n1: string, n2: string): MyFunctionTypes => {
 if (printType ==
 'fullName') {
 return () => {
@@ -147,7 +145,6 @@ else {
 return n1 + n2;
 }
 }
-
 
 const printFun = getMyPrinter('fullName','Angular', 'Typescript');
 
